@@ -1,0 +1,50 @@
+version: '3.9'
+services:
+
+  php8.1.11:
+    image: php8.1.11
+    hostname: php8.1.11
+    container_name: php8.1.11
+    build:
+      context: ./docker/apache/php8.1.11/
+      dockerfile: Dockerfile
+    ports:
+      - "8093:80"
+    volumes:
+      - ./app/:/var/www/html/
+
+  php8.1.7:
+    image: php8.1.7
+    hostname: php8.1.7
+    container_name: php8.1.7
+    build:
+      context: ./docker/apache/php8.1.7/
+      dockerfile: Dockerfile
+    ports:
+      - "8092:80"
+    volumes:
+      - ./app/:/var/www/html/
+
+  php8.0.20:
+    image: php8.0.20
+    hostname: php8.0.20
+    container_name: php8.0.20
+    build:
+      context: ./docker/apache/php8.0.20/
+      dockerfile: Dockerfile
+    ports:
+      - "8091:80"
+    volumes:
+      - ./app/:/var/www/html/
+
+  php7.4.30:
+    image: php7.4.30
+    hostname: php7.4.30
+    container_name: php7.4.30
+    build:
+      context: ./docker/apache/php7.4.30/
+      dockerfile: Dockerfile
+    ports:
+      - "8090:80"
+    volumes:
+      - ./app/:/var/www/html/
